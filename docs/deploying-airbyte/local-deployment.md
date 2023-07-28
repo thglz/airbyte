@@ -33,6 +33,15 @@ BASIC_AUTH_PASSWORD=your_new_password_here
 
 - Start moving some data!
 
+:::caution
+
+For security reasons, we strongly recommend not exposing Airbyte on Internet available ports.  
+This is not intended to run on an internet facing server since `Docker Compose` will expose random ports on all network interfaces.  
+
+The proxy service is secured by basic auth but `./run-ab-platform.sh` will also expose all services like `webapp` in an unsecured way and accessible without authentication.
+
+:::
+
 ## Deploy on Windows
 
 After installing the WSL 2 backend and Docker you should be able to run containers using Windows PowerShell. Additionally, as we note frequently, you will need `docker-compose` to build Airbyte from source. The suggested guide already installs `docker-compose` on Windows.
